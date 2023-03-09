@@ -1,4 +1,7 @@
 # codezi.pro
+
+![Codezi.pro](https://codezi.pro/favicon/img.png)
+
 [Codezi.pro](https://codezi.pro) is an amazing website that provides a wide range of online tools designed to assist programmers and computer users alike. The platform offers an array of tools for data conversion, sample data generation, file checksum, online encryption and decryption, hash code generation, and much more. With Codezi, you can easily [convert JSON to SQL](https://codezi.pro/json-to-sql), [JSON to Excel](https://codezi.pro/json-to-excel), [XML](https://codezi.pro/xml) to other formats, and vice versa.
 
 One of the standout features of Codezi is its ability to convert data between different formats quickly and easily. Whether you're a developer who needs to manipulate large datasets or a general computer user who needs to convert files for personal use, Codezi has the tools you need to get the job done efficiently.
