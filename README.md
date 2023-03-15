@@ -1,4 +1,3 @@
-php .\artisan translation:sync-missing-translation-keys
 
 ![Codezi.pro](https://codezi.pro/favicon/img.png)
 
