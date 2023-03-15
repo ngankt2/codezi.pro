@@ -1,4 +1,4 @@
-# codezi.pro
+php .\artisan translation:sync-missing-translation-keys
 
 ![Codezi.pro](https://codezi.pro/favicon/img.png)
 
@@ -9,3 +9,11 @@ One of the standout features of Codezi is its ability to convert data between di
 The platform is completely free and requires no installation, which makes it extremely accessible and easy to use. Additionally, Codezi offers a variety of other useful utilities such as file checksums, hash code generators, and online encryption and decryption, all of which are essential for anyone who works with data or code on a regular basis.
 
 Codezi's user-friendly interface and simple tools make it a popular choice for both experienced programmers and general computer users. The platform is constantly being updated with new features and utilities, so you can be sure that you'll always have access to the latest and greatest tools for your work.
+
+### Todo List
+
+- [ ] ObjectID generation
+- [x] [CSV to SQL Insert](https://codezi.pro/csv-to-sql)
+- [x] [JSON to SQL Insert](https://codezi.pro/json-to-sql)
+
+
