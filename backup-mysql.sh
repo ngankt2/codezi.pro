@@ -1,5 +1,5 @@
 #!/bin/bash
-#backup mysql database script
+
 # Source the environment variables from .env
 source '.env'
 
@@ -31,6 +31,9 @@ if [ $? -eq 0 ]; then
 
     # Remove the original SQL backup file
     rm $BACKUP_FILE
+
+    # Remove old backup files, keeping only the 7 most recent
+    ls -t $BACKUP_DIR/*.zip | tail -n +8 | xargs rm -f
 
     echo "Backup completed successfully. ZIP file: $ZIP_FILE"
 else
