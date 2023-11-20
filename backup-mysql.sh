@@ -1,19 +1,28 @@
 #!/bin/bash
+#backup mysql database script
+# Source the environment variables from .env
+source '.env'
 
-# MySQL database credentials
-DB_USER="your_username"
-DB_PASSWORD="your_password"
-DB_NAME="your_database_name"
+BACKUP_DIR="path/to/backup"
+ZIP_PASSWORD="your password"
+EXCLUDED_TABLES=("table1_to_exclude" "table2_to_exclude" "table3_to_exclude")
 
-# Output directory and file names
-BACKUP_DIR="/path/to/backup"
+DB_USERNAME="$DB_USERNAME"
+DB_PASSWORD="$DB_PASSWORD"
+DB_DATABASE="$DB_DATABASE"
+
 TIMESTAMP=$(date +"%Y%m%d%H%M%S")
-BACKUP_FILE="$BACKUP_DIR/$DB_NAME-$TIMESTAMP.sql"
-ZIP_FILE="$BACKUP_DIR/$DB_NAME-$TIMESTAMP.zip"
-ZIP_PASSWORD="your_zip_password"
+BACKUP_FILE="$BACKUP_DIR/$DB_DATABASE-$TIMESTAMP.sql"
+ZIP_FILE="$BACKUP_DIR/$DB_DATABASE-$TIMESTAMP.zip"
 
-# Create backup using mysqldump
-mysqldump -u$DB_USER -p$DB_PASSWORD $DB_NAME > $BACKUP_FILE
+# Create backup using mysqldump, excluding data from specified tables
+mysqldump_cmd="mysqldump -u$DB_USERNAME -p$DB_PASSWORD $DB_DATABASE"
+
+for table in "${EXCLUDED_TABLES[@]}"; do
+    mysqldump_cmd+=" --ignore-table=$DB_DATABASE.$table --no-data"
+done
+
+$mysqldump_cmd > $BACKUP_FILE
 
 # Check if mysqldump was successful
 if [ $? -eq 0 ]; then
